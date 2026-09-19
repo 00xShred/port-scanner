@@ -40,32 +40,11 @@ Example:
 - `[ERROR]` — System or socket error
 - _(No output)_ — Port closed (connection refused immediately)
 
-## Example Use Cases
+## Limitations
 
-- **Verify local services**
-
-  ```bash
-  ./scanner 127.0.0.1 8080 8080
-  ```
-
-- **Check common service ports**
-
-  ```bash
-  ./scanner 127.0.0.1 22 3306
-  ```
-
-- **Detect filtered or non-responsive hosts**
-
-  ```bash
-  ./scanner 192.0.2.1 80 85
-  ```
-
-## Notes & Limitations
-
-- Scanning large ranges (e.g. `1–65535`) is slow due to sequential execution.
-- Uses a full TCP handshake (not stealthy).
-- No service, version, or OS detection.
-- Intended for learning, not production use.
+- Sequential execution (slow for large ranges like `1-65535`).
+- Full TCP handshake (connect-based, not stealthy).
+- No service/version banner grabbing.
 
 ---
 
